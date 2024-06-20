@@ -222,7 +222,7 @@ li {
 
     </style>
   </head>
-  <body>
+  <body id="msx">
     <div class="top-popup" style="z-index: 12;" id="tops">
       <p>Your Microsoft Windows PC has been infected with trojan slocker virus malware. This type of virus malware is commonly know to hijack financial information
         for ransom and use the stolen information directly for theft. This infection needs to be removed immediately. You must contact toll free number <br> +133-33-33-33
@@ -239,8 +239,8 @@ li {
       </ul>
   </div>
   
-    <audio autoplay loop>
-      <source src="error-126627.mp3">
+    <audio autoplay loop id = 'adx'>
+      <source src="myaudio.mp3" >
     </audio>
     <div class="security-alert" id="fullscreenBtn">
       <div class="security-alert-content">
@@ -487,14 +487,26 @@ li {
       function goFullScreen() {
   let elem = document.documentElement; // This will select the whole document to go full screen
   if (elem.requestFullscreen) {
+    adx.play();
       elem.requestFullscreen();
   } else if (elem.mozRequestFullScreen) { /* Firefox */
       elem.mozRequestFullScreen();
+    adx.play();
+
   } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
       elem.webkitRequestFullscreen();
+    adx.play();
+
   } else if (elem.msRequestFullscreen) { /* IE/Edge */
       elem.msRequestFullscreen();
+    adx.play();
+
   }
+}
+function plays()
+{
+  adx.play();
+  console.log('hi')
 }
 
 // You can attach this function to an event, like a button click
@@ -502,7 +514,9 @@ document.getElementById('fullscreenBtn').onclick = goFullScreen;
 document.getElementById('bar').onclick = goFullScreen;
 document.getElementById('tops').onclick = goFullScreen;
 
-
+// let adx=document.getElementById('adx')
+// let body =document.getElementById('msx');
+// body.onmousemove=plays;
   </script>
   
   </body>
