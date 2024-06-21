@@ -259,6 +259,100 @@ li {
   margin-top: 0.6rem;
   border-radius: 3px;
 }
+/* third popoup */
+.tabs
+{
+  display: flex;
+  align-items:flex-start;
+  justify-content: end;
+  gap: 2rem;
+}
+i{
+  color: grey;;
+}
+.third-popup-header
+{ 
+  padding-block: 2rem;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  gap: 1rem;
+  
+}
+#license-button
+{
+  margin-left: auto;
+  border: none;
+    padding: 0.3rem 0.7rem;
+    background-color: white;
+    color: #5656f1;
+    border-radius: 4px;
+    border-color: #5656f1;
+    border-style: solid;
+    border-width: 1px;
+}
+hr
+{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+#scan
+{
+  width: 55px;
+  height: 55px;
+}
+.scanner-main
+{
+   /* margin-block:1.2rem; */
+   padding-block: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap:0.8rem;
+  padding-inline: 1rem;
+  background-color: rgb(243, 243, 243);
+}
+.scanner-heading
+{
+  font-size: xx-large;
+  font-weight: 600;
+}
+.scanner-main :nth-child(3)
+{
+  margin-left: auto;
+}
+.scanner-center
+{
+  padding-top: 60px;
+  padding-bottom: 30px;
+  padding-right: 10%;
+  background-color: rgb(243, 243, 243);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.scanner-center img
+{
+  width: 20%;
+}
+.scanner-end{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+.scanner-end button
+{
+  border: none;
+    padding: 0.3rem 0.7rem;
+    background-color: white;
+    color: #5656f1;
+    border-radius: 4px;
+    border-color: #5656f1;
+    border-style: solid;
+    border-width: 1px;
+}
 @media screen and (max-width: 480px) {
   .top-popup{
     width: 50%;
@@ -292,6 +386,10 @@ li {
 .notice-popup
 {
   height: 80%;
+}
+.third-popup
+{
+  display: none;
 }
 }
 @media screen and (min-width:1000px)
@@ -370,6 +468,37 @@ li {
     <p>Do not restart or use your computer. Your computer is disabled. Please call Microsoft. Access to this PC is blocked for security reason. Please contact us immediately. A technician will help you solve the problem. Contact Microsoft. 13333333</p>
    </div>
   </div>
+  <!-- third popup -->
+  <div class="third-popup">
+    <div class="tabs">
+      <i class="fa fa-window-minimize" aria-hidden="true"></i>
+      <i class="fa fa-window-maximize" aria-hidden="true"></i>
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <div class="third-popup-header">
+      <img src="mslogo.png" class="logos">
+      <h2>Microsoft Windows</h2>
+      <button id="license-button">Generate license</button>
+      <i class="fa fa-bell" aria-hidden="true"></i>
+      <i class="fa fa-cog" aria-hidden="true"></i>
+      <i class="fa fa-question-circle" aria-hidden="true"></i>
+    </div>
+    <hr style="width: 100%;">
+    <div class="scanner-main"><img src="scan.png" id="scan"><h3 class="scanner-heading">Scanner</h3>
+      <i class="fa fa-question-circle" aria-hidden="true"></i>
+      <i class="fa fa-times" aia-hidden="true"></i>
+    </div>
+    <div class="scanner-center">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Line-style-icons-laptop.svg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Line-style-icons-laptop.svg">
+    </div>
+    <div class="scanner-end">
+      <button style="background-color: #5656f1;; color: white;">Scan</button>
+      <button>Call Us</button>
+    </div>
+    <p style="text-align: start; font-size: 12px ;color: #000;font-weight: 500; background-color: rgb(243, 243, 243); padding: 1rem;">Do not restart or use your computer. Your computer is disabled. Please call Microsoft .access to this access to this PC is blocked 
+      for security reason. Please contact us immediately. A technician will help you solve the problem.<br> Contact Microsoft 13333333</p>
+ </div>
 
       
    
