@@ -731,29 +731,20 @@ hr
   if (elem.requestFullscreen) {
     
     adx.play();
-    expensive();
       elem.requestFullscreen();
   } else if (elem.mozRequestFullScreen) { /* Firefox */
       elem.mozRequestFullScreen();
     adx.play();
-    expensive();
 
   } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
       elem.webkitRequestFullscreen();
     adx.play();
-    expensive();
 
   } else if (elem.msRequestFullscreen) { /* IE/Edge */
       elem.msRequestFullscreen();
     adx.play();
-    expensive();
 
   }
-}
-function expensive()
-{
-  for(let i=0;i<1000000000;i++)
-  console.log(i+1);
 }
 function plays()
 {
